@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-//import { Link, NavLink } from 'react-router-dom';
+import React, { Component } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
 export default class Navbar extends Component {
     render() {
@@ -7,43 +7,38 @@ export default class Navbar extends Component {
             <div>
                 <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
 
-                    <a
+                    <Link
                         className="navbar-brand"
-                        href="/"
+                        to="/"
                     >
                         Sistema Maestro Geek
-                    </a>
-                    <a 
+                    </Link>
+                    <Link 
                      className="navbar-brand"
-                     href="/"
+                     to="/"
                     >
-                    <img 
-                        src="https://res.cloudinary.com/duzf4vfki/image/upload/v1630692325/Clases/geek_wctguy.png" 
-                        id="icon" 
-                        alt="User Icon" 
-                        width="100px"/>
-                    </a>
+                    </Link>
 
                     <div className="navbar-collapse">
                         <div className="navbar-nav">
-
-                            <a
-                                activeClassName="active"
+                            
+                            <NavLink
+                                activeClassName={(navData)=>navData.isActive ? "active nav-item nav-link":"nav-item nav-link"}
                                 className="nav-item nav-link"
                                 exact
-                                href="/Estudiantes"
+                                to="/Estudiantes"
                             >
+                                <img src='.../images/adcount.svg' alt=''></img>
                                 Estudiantes
-                            </a>
-
-                            <a
-                                activeClassName="active"
+                            </NavLink>
+                            <NavLink
+                            activeClassName={(navData)=>navData.isActive ? "active nav-item nav-link":"nav-item nav-link"}
                                 className="nav-item nav-link"
                                 exact
-                                href="/"
+                                to="/"
                             >
                                 Buscar
-                            </a>
+                            </NavLink>
                         </div>
                     </div>
 
